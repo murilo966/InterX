@@ -1,18 +1,4 @@
-<?php
-  /* INICIAR UMA VARIÁVEL DE SESSÃO */
-  session_start();
 
-  /* SESSÃO PARA IDENTIFICAÇÃO DA TELA ATUAL - UTILIZADA PARA DIRECIONAR AS AÇÕES NO BD.PHP */
-  $_SESSION['tela'] = 'cadaluno';
-
-  if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
-
-    echo "<script>alert('Usuário não logado ou sem permissão de acesso!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -61,7 +47,7 @@
 
           <div class="col-md-6 mb-4">
             <div class="card">
-              <img src="../../img/Aluno.jpg" class="card-img-top" width="auto" height="20%">
+              <img src="../../img/Aluno.jpg" class="card-img-top" width="202px">
               <div class="card-body text-center">
                 <h6 class="card-title">Murilo de Sousa</h6>
                 <p class="card-text">Aluno do 3° ano do EMED Informática</p>
@@ -78,12 +64,6 @@
       </div>
       
       <br><br><br>
-      <?php
-        if (!empty($_SESSION['ok'])) {
-                  echo $_SESSION['ok'];
-                  unset($_SESSION['ok']);
-        }
-      ?>
 
       <?php
         include_once "../componentes/rodape.php";

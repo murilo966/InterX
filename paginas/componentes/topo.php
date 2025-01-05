@@ -1,14 +1,5 @@
 <nav class="navbar navbar-dark bg-primary fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="
-      <?php 
-        if ($_SESSION['acesso'] == 2) {
-          echo "../home/homeadm.php";
-        } else {
-          echo "../home/";
-        }
-      ?>   
-    ">
       <img src="../../img/logo_senac.png" alt="Bootstrap" width="50" >
     </a>
     <a class="navbar-brand" href="#">Interclasses 2024</a>
@@ -27,42 +18,37 @@
         <ul class="navbar-nav justify-center flex-grow-1 pe-3">
         
           <?php
-          
-            if ($_SESSION['acesso'] == 2) { 
-              echo "<li class='nav-item align-self-center'>";
-                echo "<a class='nav-link active' aria-current='page' href='../home/homeadm.php'>Home</a>";
-              echo "</li>";
-              echo "<li class='nav-item align-self-center'>";
-                echo "<a class='nav-link active' aria-current='page' href='../cadastro/cadaluno.php'>Cadastro de usuários</a>";
-              echo "</li>";
+           /* ADMIN */
+            echo "<li class='nav-item align-self-center'>";
+              echo "<a class='nav-link active' aria-current='page' href='../home/homeadm.php'>Home</a>";
+            echo "</li>";
+            echo "<li class='nav-item align-self-center'>";
+              echo "<a class='nav-link active' aria-current='page' href='../cadastro/cadaluno.php'>Cadastro de usuários</a>";
+            echo "</li>";
 
-              echo "<li class='nav-item align-self-center'>";
-                echo "<a class='nav-link active' aria-current='page' href='../cadastro/cadjogos.php'>Cadastro de jogos</a>";
-              echo "</li>";
+            echo "<li class='nav-item align-self-center'>";
+              echo "<a class='nav-link active' aria-current='page' href='../cadastro/cadjogos.php'>Cadastro de jogos</a>";
+            echo "</li>";
 
-              echo "<li class='nav-item align-self-center'>";
-                echo "<a class='nav-link active' aria-current='page' href='../cadastro/cadpontos.php'>Lançamento dos pontos extras</a>";
-              echo "</li>";
+            echo "<li class='nav-item align-self-center'>";
+              echo "<a class='nav-link active' aria-current='page' href='../cadastro/cadpontos.php'>Lançamento dos pontos extras</a>";
+            echo "</li>";
 
-              echo "<li class='nav-item align-self-center'>";
-                echo "<a class='nav-link active' aria-current='page' href='../cadastro/visresultados.php'>Lançamento de resultados</a>";
-              echo "</li>";
+            echo "<li class='nav-item align-self-center'>";
+              echo "<a class='nav-link active' aria-current='page' href='../cadastro/visresultados.php'>Lançamento de resultados</a>";
+            echo "</li>";
 
-              echo "<li class='nav-item align-self-center'>";
-                echo "<a class='nav-link active' aria-current='page' href='../cadastro/visdenuncias.php'>Análise de denúncias</a>";
-              echo "</li>";
+            echo "<li class='nav-item align-self-center'>";
+              echo "<a class='nav-link active' aria-current='page' href='../cadastro/visdenuncias.php'>Análise de denúncias</a>";
+            echo "</li>";
 
-            }
-
-            if ($_SESSION['acesso'] == 1) {
-              
-              echo "<li class='nav-item align-self-center'>";
+            /* COMUM */
+              /* echo "<li class='nav-item align-self-center'>";
                 echo "<a class='nav-link active' aria-current='page' href='../home/'>Home</a>";
               echo "</li>";
               echo "<li class='nav-item align-self-center'>";
                 echo "<a class='nav-link active' aria-current='page' href='../cadastro/visdenunciaturmas.php'>Denúncias</a>";
-              echo "</li>";
-            }
+              echo "</li>"; */
           ?>
 
           

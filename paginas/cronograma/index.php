@@ -1,19 +1,9 @@
 <?php
 
     include_once "../conn.php";
-  //session_start();
-  $_SESSION['tela'] = 'cronograma';
-
-  if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
-
-    echo "<script>alert('Usuário não logado!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-} else {
-    
     $resultado = BuscaJogosGeral();
     $jogos = BuscaJogosGeral();
     //print_r($jogos);
-}
 
 ?>
 

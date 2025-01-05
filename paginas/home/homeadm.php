@@ -1,15 +1,6 @@
 <?php
 
     include_once "../conn.php";
-
-    //session_start();
-
-    if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
-
-        echo "<script>alert('Usuário não logado!')</script>";
-        echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-    } else {
-        
         /* BUSCA NO BANCO DE DADOS OS PONTOS DA EQUIPE DO USUÁRIO, BUSCANDO PELOS JOGOS QUE VENCERAM */
         //$pontuacao = BuscaPontos($_SESSION['turma']);
         //$contPontuacao = count($pontuacao);
@@ -17,7 +8,6 @@
        // print_r(count($pontuacao));
         $jogos = BuscaJogosDia();
         //$pontoperdidos = BuscaPontosPerdidos($_SESSION['turma']);
-    }
 
 ?>
 

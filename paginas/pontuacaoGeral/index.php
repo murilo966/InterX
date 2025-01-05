@@ -1,8 +1,6 @@
 <?php
   include_once "../conn.php";
-  //session_start(); 
-  $_SESSION['tela'] = 'cronograma';
-  
+
   /* VARIÁVEL PARA SOMAR O TOTAL DAS PONTUAÇÕES */
   $calc = 0;
 
@@ -14,14 +12,6 @@
 
   /* VARIÁVEL PARA VALIDAR AS MODALIDADES QUE TEM PONTOS */
   $valida = 0;
-
-  if (!isset($_SESSION['usuario'])) {
-
-    echo "<script>alert('Usuário não logado!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-} else {
-    $resultado = BuscaPontos($_SESSION['turma']);
-}
 
 ?>
 
