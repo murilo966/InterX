@@ -2,14 +2,7 @@
 
   session_start(); 
   $_SESSION['tela'] = 'caddenuncia';
-
-  if (!isset($_SESSION['usuario'])) {
-
-    echo "<script>alert('Usuário não logado!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-}
-
-
+  
 ?>
 <!doctype html>
 <html lang="pt-br">

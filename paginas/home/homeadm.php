@@ -27,7 +27,9 @@
         ?>
         <br>
         <div class="container text-center mt-5 ">
-            <h4 class="border border-2 border-warning rounded-2 text-uppercase text-white py-2 px-2 mb-3 bg-warning">Equipe - <?php echo $_SESSION['turma'] ?></h4>
+            <h4 class="border border-2 border-warning rounded-2 text-uppercase text-white py-2 px-2 mb-3 bg-warning">
+                Equipe - ADMIN
+            </h4>
             <a class="btn btn-danger mb-4 w-100" href="../../assets/arq/RegulamentoInterclasses2024.pdf" download="RegulamentoInterclasses2024.pdf">Acessar o regulamento do Interclasses - 2024</a>
             <div class="row mx-1 border border-2 py-2 px-2 rounded-3">
                 <div class="col-md-12 border-bottom border-2 border-primary">

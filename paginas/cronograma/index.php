@@ -51,7 +51,7 @@
                                                         echo "<h5 class='fw-medium'>" . date('H:i', strtotime($jogos[$key]['hora'])) . "</h5>";
                                                     echo "</div>";
 
-                                                    echo "<div class='col my-auto ms-3'>";
+                                                    echo "<div class='col my-auto ms-2'>";
 
                                                             /* VERIFICA A EQUIPE 1 E ADICIONA O SÍMBOLO */   
                                                         if ($jogos[$key]['time1']  == 'Pandora') {

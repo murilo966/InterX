@@ -1,15 +1,6 @@
 <?php 
-
   session_start(); 
   $_SESSION['tela'] = 'cadjogos';
-
-  if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
-
-    echo "<script>alert('Usuário não logado ou sem permissão de acesso!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-}
-
-
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -89,14 +80,6 @@
                     <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Cadastrar</button>
 
             </form>
-            <?php
-                        
-                        if (!empty($_SESSION['ok'])) {
-                          echo $_SESSION['ok'];
-                          unset($_SESSION['ok']);
-                        }
-
-                    ?>
         </div>
     </div>
 

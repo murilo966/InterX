@@ -2,30 +2,21 @@
     include_once "../conn.php";
 
     if ($_SESSION['tela'] == 'cadaluno') {
-        /* limpa a variável de tela */
+        /*  limpa a variável de tela  */
         $_SESSION['tela'] = '';
-
-        $permissao;
-
-        /* chama a função de cadastrar aluno da tela conn.php já passando a permissão correta*/
-        if ($_POST['team'] == 'Professor') {
-            $permissao = 2;
-        } else {
-            $permissao = 1;
-        }
         
-        $erro = CadastrarAluno($_POST['name'], $_POST['email'], sha1($_POST['password']), $_POST['team'], $permissao, $_SESSION['usuario'], date("Y-m-d H:i:s"));
         
+        $erro = CadastrarAluno($_POST['name'], $_POST['email'], /* sha1() */$_POST['password'], $_POST['team'], date("Y-m-d H:i:s")); 
         if ($erro == 0) {
             echo "Entrou na gravação com sucesso";
-            /* SE O RETORNO FOR 0 A GRAVAÇÃO FOI CONCLUÍDA COM SUCESSO */
-            $_SESSION['ok'] = "<div class='alert alert-success mt-3' role='alert'>Usuário cadastrado com sucesso!</div>";
-            echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadaluno.php'/>";
+            /*  SE O RETORNO FOR 0 A GRAVAÇÃO FOI CONCLUÍDA COM SUCESSO  */
+            echo "<div class='alert alert-success mt-3' role='alert'>Usuário cadastrado com sucesso!</div>";
+             echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadaluno.php'/>"; 
 
         } else {
             echo "Entrou ERRRROOOOOOO";
-            /* SE O RETORNO FOR 1 OCORREU UM ERRO */
-            $_SESSION['ok'] = "<div class='alert alert-danger mt-3' role='alert'>Usuário já cadastrado.</div>";
+            /*  SE O RETORNO FOR 1 OCORREU UM ERRO  */
+            echo "<div class='alert alert-danger mt-3' role='alert'>Usuário já cadastrado.</div>";
             echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadaluno.php'/>";
         }
         
@@ -33,14 +24,16 @@
     
     } elseif ($_SESSION['tela'] == 'login') {
         $_SESSION['tela'] = '';
-        $ret = LoginAluno(sha1($_POST['password']), $_POST['email']);
+
+        $ret = LoginAluno(/* sha1() */$_POST['password'], $_POST['email']);
 
     } elseif ($_SESSION['tela'] == 'cadjogos') {
         $_SESSION['tela'] = '';
+
         CadJogos($_POST['modalidade'], $_POST['time1'], $_POST['time2'], $_POST['local'], $_POST['data'], $_POST['hora']);
 
-        $_SESSION['ok'] = "<div class='alert alert-success mt-2' role='alert'>Cadastro realizado com sucesso!</div>";
-        echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadjogos.php'/>";
+        echo "<div class='alert alert-success mt-2' role='alert'>Cadastro realizado com sucesso!</div>";
+        /* echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadjogos.php'/>"; */
 
     } elseif ($_SESSION['tela'] == 'caddenuncia') {
         $_SESSION['tela'] = '';

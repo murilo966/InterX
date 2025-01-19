@@ -2,16 +2,13 @@
 
 /* $pontosatividades = 100; */
 
-
-session_start();
-
 function ConectaBD() {
     //$pdo = new PDO('mysql:host=localhost;dbname=ensin368_app', 'ensin368_app', 'Senac2024!!');
-    $pdo = new PDO('mysql:host=localhost;dbname=cole6345_app', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=interx', 'root', '');
     return $pdo;
 }
 
-function CadastrarAluno($nome, $email, $senha, $turma, $tipo, $responsavel, $data) {
+function CadastrarAluno($nome, $email, $senha, $turma, $data) {
     
     
     /* REALIZA A GRAVAÇÃO DOS DADOS DO ALUNO */
@@ -23,7 +20,7 @@ function CadastrarAluno($nome, $email, $senha, $turma, $tipo, $responsavel, $dat
     if (empty($dados)) {
         /* SE NÃO ENCONTRAR USUÁRIO IGUAL GRAVA AS INFORMAÇÕES NO BANCO */
         $sql = $pdo->prepare("INSERT INTO `usuarios` VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
-        $sql->execute(array($nome, $email, $senha, $turma, $tipo, $responsavel, $data));
+        $sql->execute(array($nome, $email, $senha, $turma, $data));
         return 0;
     } else {
         /* SE ENCONTRAR USUÁRIO COM O MESMO E-MAIL RETORNAR 1 PARA MOSTRAR ERRO */
@@ -46,29 +43,10 @@ function LoginAluno($senha, $email) {
     if (empty($dados)) {
 
         /* SE NÃO TIVER DADOS VÁLIDOS GUARDA UM ALERT DE ERRO NA SESSÃO */
-        $_SESSION['ok'] = "<div class='alert alert-danger mt-3' role='alert'>Usuário ou senha não encontrados!</div>";
+        echo "<div class='alert alert-danger mt-3' role='alert'>Usuário ou senha não encontrados!</div>";
         echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-    } else {
-
-        /* INICIA A SESSÃO USUÁRIO E GUARDA O USUÁRIO ATIVO */
-        //session_start();
-
-        $_SESSION['usuario'] = $dados[0]['email'];
-        $_SESSION['acesso'] = $dados[0]['tipo'];
-        $_SESSION['turma'] = $dados[0]['turma'];
-      
-        if ($_SESSION['acesso'] == 2) {
-            echo "<meta http-equiv= 'refresh' content='0; URL=../home/homeadm.php'/>";
-        } else {
-            echo "<meta http-equiv= 'refresh' content='0; URL=../home/index.php'/>";
-        }
-
     }
 
-}
-
-function ExcluirAluno() {
-    
 }
 
 function CadJogos($modalidade, $time1, $time2, $local, $data, $hora) {

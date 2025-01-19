@@ -1,14 +1,6 @@
 <?php 
   include_once "../conn.php";
-  //session_start(); 
-  $_SESSION['tela'] = 'cadresultados';
-
-  if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
-
-    echo "<script>alert('Usuário não logado ou sem permissão de acesso!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
-}
-
+  
   $resultado = BuscaJogos();
   //print_r($resultado);
 
