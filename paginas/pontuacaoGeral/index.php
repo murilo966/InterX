@@ -18,7 +18,7 @@
   if (!isset($_SESSION['usuario'])) {
 
     echo "<script>alert('Usuário não logado!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
+    echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadaluno.php'/>";
 } else {
     $resultado = BuscaPontos($_SESSION['turma']);
 }

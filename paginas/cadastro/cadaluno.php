@@ -8,7 +8,6 @@
   if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
 
     echo "<script>alert('Usuário não logado ou sem permissão de acesso!')</script>";
-    echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
 }
 
 
@@ -19,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de aluno</title>
+    <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary text-center">
@@ -31,15 +30,15 @@
         <form action="bd.php" method="post">
          
                 <img class="mb-4" src="../../img/logo_senac.png" alt="" width="30%">
-                <h1 class="h3 mb-3 fw-normal">Cadastro de usuários</h1>
+                <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
             
                 <div class="form-floating">
                   <input type="text" class="form-control" id="floatingName" placeholder="Name" name="name" required>
-                  <label for="floatingInput">Digite o nome do usuário.</label>
+                  <label for="floatingInput">Digite o nome de usuário.</label>
                 </div>
                 <div class="form-floating">
                   <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
-                  <label for="floatingInput">Digite o e-mail do usuário.</label>
+                  <label for="floatingInput">Digite o e-mail de usuário.</label>
                 </div>
                 <div class="form-floating">
                   <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>

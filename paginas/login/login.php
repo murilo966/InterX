@@ -18,6 +18,7 @@
             
                     <img class="mb-4" src="../../img/logo_senac.png" alt="" width="30%">
                     <h1 class="h3 mb-3 fw-normal">Interclasses</h1>
+                    
                     <div class="form-floating">
                       <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" autocomplete="on" required>
                       <label for="floatingInput">Digite seu e-mail...</label>

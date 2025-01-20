@@ -7,7 +7,7 @@
     if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
 
         echo "<script>alert('Usuário não logado!')</script>";
-        echo "<meta http-equiv= 'refresh' content='0; URL=../login/login.php'/>";
+        echo "<meta http-equiv= 'refresh' content='0; URL=../cadastro/cadaluno.php'/>";
     } else {
         
         /* BUSCA NO BANCO DE DADOS OS PONTOS DA EQUIPE DO USUÁRIO, BUSCANDO PELOS JOGOS QUE VENCERAM */

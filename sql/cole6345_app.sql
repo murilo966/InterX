@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/10/2024 às 14:17
+-- Tempo de geração: 20/01/2025 às 00:40
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -133,15 +133,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `turma`, `tipo`, `responsavel`, `data`) VALUES
 (100, 'Clerison Bueno', 'clerisonbueno@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Anacrônico', 1, '', '2024-09-04'),
-(101, 'Admin', 'adm@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'pandora', 2, '', '2024-09-11'),
-(103, 'Aluno', 'aluno@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Pandora', 1, '', '2024-09-12'),
-(105, 'Corsário', 'corsario@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Corsário', 1, 'adm@gmail.com', '2024-10-01'),
-(106, 'Pandora', 'pandora@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Pandora', 1, 'adm@gmail.com', '2024-10-01'),
-(107, 'Fênix', 'fenix@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Fênix', 1, 'adm@gmail.com', '2024-10-01'),
-(108, 'Juízo Final', 'juizofinal@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Juízo Final', 1, 'adm@gmail.com', '2024-10-01'),
-(109, 'Atena', 'atena@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Atena', 1, 'adm@gmail.com', '2024-10-01'),
-(110, 'Anacrônico', 'anacronico@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Anacrônico', 1, 'adm@gmail.com', '2024-10-01'),
-(111, 'ssadlkjas', 'asda@sfdfs.com', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 'Professor', 2, 'adm@gmail.com', '2024-10-01');
+(101, 'Admin', 'adm@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'pandora', 2, '', '2024-09-11');
 
 --
 -- Índices para tabelas despejadas
