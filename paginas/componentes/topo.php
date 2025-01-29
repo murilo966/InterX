@@ -8,7 +8,7 @@
       <img src="../../img/logo_senac.png" alt="Bootstrap" width="50" >
     </a>
     <div class="navbar-brand">Interclasses 2024</div>
-    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -22,8 +22,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-center flex-grow-1 pe-3">
         
-          
-          
+          <?php
             if ($_SESSION['acesso']) { 
               echo "<li class='nav-item align-self-center'>";
                 echo "<a class='nav-link active' aria-current='page' href='../home/homeadm.php'>Home</a>";
@@ -59,7 +58,7 @@
                 echo "<a class='nav-link active' aria-current='page' href='../cadastro/visdenunciaturmas.php'>Denúncias</a>";
               echo "</li>";
             }
-          
+          ?>
 
           
           <li class="nav-item align-self-center">
@@ -74,6 +73,6 @@
           
         </ul>
       </div>
-    </div> -->
+    </div>
   </div>
 </nav>

@@ -11,7 +11,7 @@ function ConectaBD() {
     return $pdo;
 }
 
-function CadastrarAluno($nome, $email, $senha, $turma, $tipo, $responsavel, $data) {
+function CadastrarAluno($nome, $email, $senha, $turma, $responsavel, $tipo, $data) {
     
     
     /* REALIZA A GRAVAÇÃO DOS DADOS DO ALUNO */
@@ -23,7 +23,7 @@ function CadastrarAluno($nome, $email, $senha, $turma, $tipo, $responsavel, $dat
     if (empty($dados)) {
         /* SE NÃO ENCONTRAR USUÁRIO IGUAL GRAVA AS INFORMAÇÕES NO BANCO */
         $sql = $pdo->prepare("INSERT INTO `usuarios` VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
-        $sql->execute(array($nome, $email, $senha, $turma, $tipo, $responsavel, $data));
+        $sql->execute(array($nome, $email, $senha, $turma, $responsavel , $tipo, $data));
         return 0;
     } else {
         /* SE ENCONTRAR USUÁRIO COM O MESMO E-MAIL RETORNAR 1 PARA MOSTRAR ERRO */
@@ -65,10 +65,6 @@ function LoginAluno($senha, $email) {
 
     }
 
-}
-
-function ExcluirAluno() {
-    
 }
 
 function CadJogos($modalidade, $time1, $time2, $local, $data, $hora) {
