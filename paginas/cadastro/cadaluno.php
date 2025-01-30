@@ -5,10 +5,11 @@
   /* SESSÃO PARA IDENTIFICAÇÃO DA TELA ATUAL - UTILIZADA PARA DIRECIONAR AS AÇÕES NO BD.PHP */
   $_SESSION['tela'] = 'cadaluno';
 
-  if (!isset($_SESSION['usuario']) OR ($_SESSION['usuario'] == 2)) {
+  if ($_SESSION['usuario'] == "administrador") {
 
+  } else {
     echo "<script>alert('Usuário não logado ou sem permissão de acesso!')</script>";
-}
+  }
 
 
 ?>
@@ -47,13 +48,9 @@
 
                 <select class="form-select form-select-lg" aria-label="Default select example" name="team" required>
                   <option value="">Selecione o vínculo...</option>
+                  <option value="Administrador">Admin</option>
                   <option value="Professor">Professor</option>
-                  <option value="Pandora">Turma Pandora</option>
-                  <option value="Anacrônico">Turma Anacrônico</option>
-                  <option value="Corsário">Turma Corsário</option>
-                  <option value="Fênix">Turma Fênix</option>
-                  <option value="Atena">Turma Atena</option>
-                  <option value="Juízo Final">Turma Juízo Final</option>  
+                  <option value="Aluno">Estudante</option>
                 </select>
                 <button class="btn btn-primary w-100 py-2 mt-3" name="cadaluno" type="submit">Cadastrar usuário</button> 
 

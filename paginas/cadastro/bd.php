@@ -4,11 +4,17 @@
     if ($_SESSION['tela'] == 'cadaluno') {
         /* limpa a variável de tela */
         $_SESSION['tela'] = '';
-        $_SESSION['usuario'] = "alguem";
-        $permissao = 0;
+        $_SESSION['usuario'] = "";
+        $permissao = null;
+        if ($_POST['team'] == "Administrador") {
+            $permissao = 2;
+        } elseif ($_POST['team'] == "Professor") {
+            $permissao = 1;
+        } else {
+            $permissao = 0;
+        }
         
-        $erro = CadastrarAluno($_POST['name'], $_POST['email'], sha1($_POST['password']), $_POST['team'], $_SESSION['usuario'],$permissao, date("Y-m-d H:i:s"));
-        
+        $erro = CadastrarAluno($_POST['name'], $_POST['email'], sha1($_POST['password']), $_POST['team'], $permissao, $_SESSION['usuario'], date("Y-m-d H:i:s"));
         if ($erro == 0) {
             echo "Entrou na gravação com sucesso";
             /* SE O RETORNO FOR 0 A GRAVAÇÃO FOI CONCLUÍDA COM SUCESSO */

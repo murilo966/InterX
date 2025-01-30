@@ -11,7 +11,7 @@ function ConectaBD() {
     return $pdo;
 }
 
-function CadastrarAluno($nome, $email, $senha, $turma, $responsavel, $tipo, $data) {
+function CadastrarAluno($nome, $email, $senha, $turma, $tipo, $responsavel, $data) {
     
     
     /* REALIZA A GRAVAÇÃO DOS DADOS DO ALUNO */
@@ -23,7 +23,7 @@ function CadastrarAluno($nome, $email, $senha, $turma, $responsavel, $tipo, $dat
     if (empty($dados)) {
         /* SE NÃO ENCONTRAR USUÁRIO IGUAL GRAVA AS INFORMAÇÕES NO BANCO */
         $sql = $pdo->prepare("INSERT INTO `usuarios` VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
-        $sql->execute(array($nome, $email, $senha, $turma, $responsavel , $tipo, $data));
+        $sql->execute(array($nome, $email, $senha, $turma, $tipo, $responsavel, $data));
         return 0;
     } else {
         /* SE ENCONTRAR USUÁRIO COM O MESMO E-MAIL RETORNAR 1 PARA MOSTRAR ERRO */

@@ -23,8 +23,8 @@
         <ul class="navbar-nav justify-center flex-grow-1 pe-3">
         
           <?php
-            if ($_SESSION['acesso']) { 
-              echo "<li class='nav-item align-self-center'>";
+            if ($_SESSION['acesso'] == 2 or $_SESSION['acesso'] == 1) { 
+              echo "<li class='nav-item align-self-center'>";   
                 echo "<a class='nav-link active' aria-current='page' href='../home/homeadm.php'>Home</a>";
               echo "</li>";
               echo "<li class='nav-item align-self-center'>";
@@ -49,7 +49,7 @@
 
             }
 
-            if ($_SESSION['acesso'] == 1) {
+            if ($_SESSION['acesso'] == 0) {
               
               echo "<li class='nav-item align-self-center'>";
                 echo "<a class='nav-link active' aria-current='page' href='../home/'>Home</a>";
